@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html:charset=utf-8' />
+<title>Nicholas Esterer: Piano Transcription Examples</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="content">
+<h1>Transcribing audio recordings of piano to MIDI data</h1>
+<p>
+The technique is based on the "Onsets and Frames" paper developed at Google
+Magenta (<a href="https://magenta.tensorflow.org/onsets-frames">link</a>). We
+tried the same approach but we wanted a system that could (theoretically)
+transcribe in real-time, because it would not need to look into the future.
+Basically we use a uni-directional recurrent network instead of a bidirectional
+one. The results are less convincing than those that Google obtained, but onset
+detection (determining the time and pitch of the beginning of the notes) is not
+bad.
+</p>
+<h2>Example</h2>
+<p>original
+<audio controls>
+<source src="yamaha/gould_mozart_original.ogg" type="audio/ogg">
+<source src="yamaha/gould_mozart_original.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</p>
+
+<p>onset transcription
+<audio controls>
+<source src="yamaha/gould_mozart_no_aug_onsets_only.ogg" type="audio/ogg">
+<source src="yamaha/gould_mozart_no_aug_onsets_only.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</p>
+
+<p>full note transcription
+<audio controls>
+<source src="yamaha/gould_mozart_no_aug.ogg" type="audio/ogg">
+<source src="yamaha/gould_mozart_no_aug.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</p>
+
+<p>Presentation <a href="yamaha/yamaha_presentation.pdf">slides</a> (includes media content, so is large)</p>
+
+<p><a href="index.html">home</a></p>
+</div>
+</body>
+</html>
