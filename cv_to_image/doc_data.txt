@@ -1,0 +1,27 @@
+InfoBegin
+InfoKey: CreationDate
+InfoValue: D:20191210171148-05'00'
+InfoBegin
+InfoKey: Creator
+InfoValue: Writer
+InfoBegin
+InfoKey: Producer
+InfoValue: LibreOffice 6.2
+PdfID0: af062957d1c6e51b725327eeb6db6910
+PdfID1: af062957d1c6e51b725327eeb6db6910
+NumberOfPages: 3
+PageMediaBegin
+PageMediaNumber: 1
+PageMediaRotation: 0
+PageMediaRect: 0 0 612 792
+PageMediaDimensions: 612 792
+PageMediaBegin
+PageMediaNumber: 2
+PageMediaRotation: 0
+PageMediaRect: 0 0 612 792
+PageMediaDimensions: 612 792
+PageMediaBegin
+PageMediaNumber: 3
+PageMediaRotation: 0
+PageMediaRect: 0 0 612 792
+PageMediaDimensions: 612 792

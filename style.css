@@ -17,9 +17,18 @@ p {
     font-size: 14px;
 }
 
+.vid_container {
+    position: relative;
+}
+
+.title_vid {
+    top: 0;
+    left: 0;
+    position: relative;
+}
+
 div.fill_top {
     width: 100%;
-    height: 200px;
     border: 0px;
     margin: 0px;
     padding: 0px;
@@ -35,7 +44,10 @@ div.fill_top {
     top: 50%;
     font-size: 18px;
     font-family: Arial, sans-serif;
+    color: white;
+    font-weight: bold;
     text-decoration:  underline;
+    transform: translate(0, -50%);
 }
 
 div.content {
