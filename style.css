@@ -60,3 +60,11 @@ img {
     border: 0;
 }
 
+a:link {
+  color: lightgrey;
+}
+
+/* visited link */
+a:visited {
+  color: darkgrey;
+}
