@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<title>St. Lawrence River Water Levels</title>
+<meta http-equiv='Content-Type' content='text/html:charset=utf-8' />
+<link rel="stylesheet" href="style.css">
+<body>
+<h1>St. Lawrence Water Levels</h1>
+<?php 
+  
+// Use ls command to shell_exec 
+// function 
+$output = shell_exec('RENDER_HTML=1 PYTHONPATH=waterlevels DB_PATH=waterlevels/data/waterlevel_history   ../../virtualenv/dummyapp/3.7/bin/python3 waterlevels/waterlevel_plot_html.py');
+  
+// Display the list of all file 
+// and directory 
+echo "<pre>$output</pre>"; 
+?> 
+
+<a href='index.html'>home</a>
+
+</body>
+</html>
+
+

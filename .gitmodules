@@ -1,0 +1,3 @@
+[submodule "waterlevels"]
+	path = waterlevels
+	url = https://github.com/mondaugen/waterlevels.git
