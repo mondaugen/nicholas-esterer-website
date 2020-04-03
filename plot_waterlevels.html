@@ -9,7 +9,7 @@
   
 // Use ls command to shell_exec 
 // function 
-$output = shell_exec('RENDER_HTML=1 PYTHONPATH=waterlevels DB_PATH=waterlevels/data/waterlevel_history   ../../virtualenv/dummyapp/3.7/bin/python3 waterlevels/waterlevel_plot_html.py');
+$output = shell_exec('RENDER_HTML=1 PYTHONPATH=waterlevels DB_PATH_FMT=waterlevels/data/waterlevel_history_%s   ../../virtualenv/dummyapp/3.7/bin/python3 waterlevels/waterlevel_cmp_html.py');
   
 // Display the list of all file 
 // and directory 
