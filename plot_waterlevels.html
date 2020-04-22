@@ -5,17 +5,68 @@
 <link rel="stylesheet" href="style.css">
 <body>
 <h1>St. Lawrence Water Levels</h1>
+<script>
+var PLOT_DIV;
+</script>
 <?php 
   
-// Use ls command to shell_exec 
-// function 
-$output = shell_exec('RENDER_HTML=1 PYTHONPATH=waterlevels DB_PATH_FMT=waterlevels/data/waterlevel_history_%s   ../../virtualenv/dummyapp/3.7/bin/python3 waterlevels/waterlevel_cmp_html.py');
+// Plot waterlevel at 3 hour intervals
+$output = shell_exec('TIME_IVAL=10800 RENDER_HTML=1 PYTHONPATH=waterlevels DB_PATH_FMT=waterlevels/data/waterlevel_history_%s   ../../virtualenv/dummyapp/3.7/bin/python3 waterlevels/waterlevel_cmp_html.py');
   
 // Display the list of all file 
 // and directory 
 echo "<pre>$output</pre>"; 
 ?> 
 
+<script>
+console.log("PLOT_DIV: " + PLOT_DIV);
+
+var PLOT_ELEMENT = document.getElementById(PLOT_DIV);
+var origrange=PLOT_ELEMENT.layout.xaxis.range;
+
+function updatezoom(e) {
+    console.log(e.code);
+    var range = undefined;
+    // range calculated by number of 3 hour blocks within time (e.g., 1 day is 8 3 hour blocks)
+    if (e.code == 'Digit1') {
+        // '1' pressed , last day
+        range=[origrange[1]-8,origrange[1]];
+    }
+    if (e.code == 'Digit2') {
+        // '2' pressed , last week
+        range=[origrange[1]-56,origrange[1]];
+    }
+    if (e.code == 'Digit3') {
+        // '3' pressed , last 2 weeks
+        range=[origrange[1]-112,origrange[1]];
+    }
+    if (e.code == 'Digit4') {
+        // '4' pressed , last month
+        range=[origrange[1]-224,origrange[1]];
+    }
+    if (e.code == 'Digit5') {
+        // '5' pressed , last 2 months
+        range=[origrange[1]-448,origrange[1]];
+    }
+    if (e.code == 'Digit0') {
+	range=origrange;
+    }
+    if (range) {
+	    var update = {
+		'xaxis.range': range
+	    };
+	    Plotly.relayout(PLOT_ELEMENT,update);
+	}
+}
+document.addEventListener('keydown',updatezoom);
+</script>
+<p>zoom: press one of the following keys to change the zoom</p>
+<p>'1': last day</p>
+<p>'2': last week</p>
+<p>'3': last 2 weeks</p>
+<p>'4': last month</p>
+<p>'5': last 2 months</p>
+<p>'0': full range</p>
 <a href='index.html'>home</a>
 
 </body>
